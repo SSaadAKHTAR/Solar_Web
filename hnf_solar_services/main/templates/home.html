@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HNF Solar Services</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        /* Main Body Layout */
+        main {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .left-section {
+            width: 50%;
+            padding-right: 20px;
+        }
+
+        .right-section {
+            width: 50%;
+            padding-left: 20px;
+        }
+
+        /* Slideshow Styling */
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 400px; /* Adjust height as needed */
+            overflow: hidden;
+        }
+
+        .slideshow img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slideshow img.active {
+            opacity: 1; /* Show the active image */
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="navbar">
+            <a href="/" class="logo">
+                <img src="{% static 'logo.png' %}" alt="Logo">
+            </a>
+            <nav>
+                <a href="/services/">Services</a>
+                <a href="/projects/">Our Projects</a>
+                <a href="/blog/">Blog</a>
+                <a href="/contact-us/">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Body -->
+    <main>
+        <div class="left-section">
+            <div class="slideshow">
+                <img src="{% static 'images/solar1.jpg' %}" alt="Solar Panel 1" class="active">
+                <img src="{% static 'images/solar2.jpg' %}" alt="Solar Panel 2">
+            </div>
+        </div>
+        <div class="right-section">
+            <h1>Welcome to HNF Solar Services</h1>
+            <p>We provide premium solar installation, cleaning, and maintenance services. Our goal is to make solar energy accessible and hassle-free.</p>
+            <ul>
+                <li>Solar Installations</li>
+                <li>Solar Panel Cleaning</li>
+                <li>Custom Solar System Design</li>
+            </ul>
+            <a href="/calculator/" class="btn">Estimate Solar Cost</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 HNF Solar Services. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Slideshow -->
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            const slides = document.querySelectorAll('.slideshow img');
+
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+
+            // Show the next slide
+            slideIndex = (slideIndex + 1) % slides.length; // Loop back to the first slide
+            slides[slideIndex].classList.add('active');
+        }
+
+        // Change slides every 3 seconds
+        setInterval(showSlides, 3000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Panel Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Solar Panel Services</h1>
+        <p>Your one-stop solution for solar panel installation, cleaning, and repairs</p>
+    </header>
+
+    <!-- Customer Information Form -->
+    <section class="info-form">
+        <h2>Enter Your Information</h2>
+        <form id="customerForm" onsubmit="submitForm(event)">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="text" id="address" placeholder="Address" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <button type="submit">Proceed to Services</button>
+        </form>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Select Your System Capacity</h2>
+        <div class="kw-options">
+            <button onclick="showCompanies(3)">3KW</button>
+            <button onclick="showCompanies(5)">5KW</button>
+            <button onclick="showCompanies(7)">7KW</button>
+            <button onclick="showCompanies(10)">10KW</button>
+        </div>
+    </section>
+
+    <!-- Companies and Item Selection -->
+    <section id="companySelection" class="hidden">
+        <h2>Select a Solar Company</h2>
+        <div class="company-options">
+            <button onclick="showItems('Inverex')">Inverex</button>
+            <button onclick="showItems('Crown')">Crown</button>
+        </div>
+    </section>
+
+    <section id="itemList" class="hidden">
+        <h2>Installation Items and Cost Estimate</h2>
+        <ul id="items">
+            <!-- Dynamic Item List -->
+        </ul>
+        <button onclick="resetSelection()">Back</button>
+    </section>
+
+    <!-- Additional Services -->
+    <section id="additionalServices" class="additional-services">
+        <h2>Additional Services</h2>
+        <div>
+            <button onclick="showCleaningCharges()">Cleaning Service</button>
+            <button onclick="showRepairingCharges()">Repairing Service</button>
+        </div>
+        <p id="serviceDetails"></p>
+    </section>
+
+    <!-- Contact Us -->
+    <footer>
+        <h2>Contact Us</h2>
+        <p>Email: support@solarpanelservices.com</p>
+        <p>Phone: +123-456-7890</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

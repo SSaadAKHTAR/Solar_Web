@@ -17,3 +17,6 @@ def blog(request):
 
 def calculator(request):
     return render(request, 'calculator.html')
+
+def contact_us(request):
+    return render(request, 'contact_us.html')

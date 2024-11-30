@@ -15,8 +15,5 @@ def projects(request):
 def blog(request):
     return render(request, 'blog.html')
 
-def calculator(request):
-    return render(request, 'calculator.html')
-
-def contact_us(request):
-    return render(request, 'contact_us.html')
+def estimate_cost(request):  # Updated function name
+    return render(request, 'solar_calc.html')

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimate Solar Cost</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        /* Page Layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .right-section {
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        td input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .total {
+            font-weight: bold;
+            background-color: #f4f4f4;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Header -->
+    <header>
+        <div class="navbar">
+            <a href="/" class="logo">
+                <img src="{% static 'logo.png' %}" alt="Logo">
+            </a>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/services/">Services</a>
+                <a href="/projects/">Our Projects</a>
+                <a href="/contact-us/">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Right Section (Calculator) -->
+        <div class="right-section">
+            <h1>Estimate Solar Calculator</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Appliances</th>
+                        <th>Watts</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody id="appliance-table">
+                    <!-- Rows will be dynamically generated -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2" class="total">Total Load (in Watts)</td>
+                        <td><input type="text" id="total-load" readonly></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <button onclick="submitData()">Get a Quote</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 HNF Solar Services. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Populate appliance table
+        const appliances = [
+            { name: "Tube Light", watts: 40 },
+            { name: "Energy Savers", watts: 25 },
+            { name: "LED Bulbs", watts: 7 },
+            { name: "Fans", watts: 100 },
+            { name: "Fans(AC/DC)", watts: 30 },
+            { name: "TVs", watts: 250 },
+            { name: "LED TVs 32\"", watts: 50 },
+            { name: "Washing Machines", watts: 800 },
+            { name: "Freezers", watts: 350 },
+            { name: "Refrigerators", watts: 350 },
+            { name: "Computers", watts: 250 },
+            { name: "Water Pumps 1HP", watts: 700 },
+            { name: "Irons", watts: 1000 },
+            { name: "Split ACs 1 Ton", watts: 1800 },
+            { name: "Split ACs 1.5 Ton", watts: 2400 },
+            { name: "Split ACs 2 Ton", watts: 3000 }
+        ];
+
+        const tableBody = document.getElementById("appliance-table");
+        appliances.forEach((appliance, index) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${appliance.name}</td>
+                <td>${appliance.watts}</td>
+                <td><input type="number" min="0" value="0" data-watts="${appliance.watts}" oninput="calculateTotal()"></td>
+            `;
+            tableBody.appendChild(row);
+        });
+
+        function calculateTotal() {
+            const inputs = document.querySelectorAll("#appliance-table input[type='number']");
+            let totalLoad = 0;
+            inputs.forEach(input => {
+                const watts = parseInt(input.dataset.watts);
+                const quantity = parseInt(input.value) || 0;
+                totalLoad += watts * quantity;
+            });
+            document.getElementById("total-load").value = totalLoad;
+        }
+
+        function submitData() {
+            alert("Total Load Calculated: " + document.getElementById("total-load").value + " Watts");
+        }
+    </script>
+</body>
+</html>

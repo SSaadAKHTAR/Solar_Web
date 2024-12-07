@@ -60,3 +60,66 @@ HNF-Solar-Services/
 ├── templates/
 │   ├── index.html        # Main HTML file
 ├── README.md             # Project documentation
+
+
+🔧 How to Use the Project
+
+To set up and use the HNF Solar Services website locally, follow these steps:
+Prerequisites
+
+    Ensure you have Git, Python, and Django installed on your system.
+
+    Clone the Repository:
+    Clone the repository to your local machine using Git.
+
+git clone https://github.com/yourusername/HNF-Solar-Services.git
+
+Navigate to the Project Directory:
+Change to the directory where the project has been cloned.
+
+cd HNF-Solar-Services
+
+Set up the Virtual Environment (optional but recommended):
+Create a virtual environment to manage dependencies.
+
+python -m venv venv
+
+Activate the virtual environment:
+
+    On Windows:
+
+venv\Scripts\activate
+
+On macOS/Linux:
+
+    source venv/bin/activate
+
+Install Dependencies:
+If you are using Django, install the necessary dependencies.
+
+pip install -r requirements.txt
+
+Run the Django Server:
+Start the Django server to serve the static files and handle requests.
+
+python manage.py runserver
+
+View the Website:
+Open your browser and visit the local server:
+
+    http://127.0.0.1:8000/
+
+    You should now see the website running on your local machine!
+
+🌐 Live Demo
+
+You can view the live demo of the project here.
+🤝 Contributing
+
+We welcome contributions to improve this project. Feel free to fork the repository and submit a pull request!
+📜 License
+
+This project is licensed under the MIT License.
+📧 Contact
+
+For any questions or inquiries about HNF Solar Services, feel free to reach out via email at contact@hnfsolarservices.com.

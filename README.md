@@ -111,15 +111,6 @@ Open your browser and visit the local server:
 
     You should now see the website running on your local machine!
 
-🌐 Live Demo
-
-You can view the live demo of the project here.
-🤝 Contributing
 
 We welcome contributions to improve this project. Feel free to fork the repository and submit a pull request!
-📜 License
 
-This project is licensed under the MIT License.
-📧 Contact
-
-For any questions or inquiries about HNF Solar Services, feel free to reach out via email at contact@hnfsolarservices.com.

@@ -81,6 +81,26 @@
             background-color: #333;
             color: white;
         }
+
+        /* WhatsApp Button Styling */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .whatsapp-btn img {
+            width: 75px;
+            height: 75px;
+            transition: transform 0.3s ease; /* Smooth scaling effect */
+        }
+
+        .whatsapp-btn:hover img {
+            transform: scale(1.1); /* Slightly enlarge on hover */
+        }
+
     </style>
 </head>
 <body>
@@ -88,7 +108,7 @@
     <header>
         <div class="navbar">
             <a href="/" class="logo">
-                <img src="{% static 'logo.png' %}" alt="Logo">
+                <img src="{% static 'logo.jpeg' %}" alt="Logo">
             </a>
             <nav>
                 <a href="/services/">Services</a>
@@ -103,21 +123,58 @@
     <main>
         <div class="left-section">
             <div class="slideshow">
-                <img src="{% static 'images/solar1.jpg' %}" alt="Solar Panel 1" class="active">
+                <img src="{% static 'images/solarM.jpeg' %}" alt="Solar Panel M" class="active">
+                <img src="{% static 'images/solar1.jpg' %}" alt="Solar Panel 1">
                 <img src="{% static 'images/solar2.jpg' %}" alt="Solar Panel 2">
+                <img src="{% static 'images/solar3.jpeg' %}" alt="Solar Panel 3">
+                <img src="{% static 'images/solar4.jpeg' %}" alt="Solar Panel 4">
             </div>
         </div>
         <div class="right-section">
-            <h1>Welcome to HNF Solar Services</h1>
-            <p>We provide premium solar installation, cleaning, and maintenance services. Our goal is to make solar energy accessible and hassle-free.</p>
+            <h1>HNF Solutions: Your Trusted Partner for Solar and Electrical Services</h1>
+            <p>
+                HNF Solutions is a premier provider of solar and electrical services, dedicated to delivering top-quality solutions tailored to meet the diverse needs of our clients. Our expertise spans across a range of services, including:
+            </p>
             <ul>
-                <li>Solar Installations</li>
-                <li>Solar Panel Cleaning</li>
-                <li>Custom Solar System Design</li>
+                <li>
+                    <strong>1. Solar System Installation</strong> 
+                </li>
+                <li>
+                    <strong>2. Solar System Maintenance and Debugging</strong> 
+                </li>
+                <li>
+                    <strong>3. Solar Panel Cleaning</strong> 
+                </li>
+                <li>
+                    <strong>4. Electrical Services</strong> 
+                </li>
             </ul>
+            <p>
+                Our website features an innovative <strong>Solar System Calculator</strong> to provide tailored solar solutions. This tool allows you to:
+            </p>
+            <ul>
+                <li>
+                    <strong>Select Appliances:</strong> Choose from various household and commercial appliances.
+                </li>
+                <li>
+                    <strong>Specify Quantities:</strong> Enter the number of appliances to calculate total energy consumption in watts.
+                </li>
+                <li>
+                    <strong>Receive Recommendations:</strong> Get suggestions for the optimal solar system, panels, and peripherals.
+                </li>
+            </ul>
+            </ul>           
             <a href="/calculator/" class="btn">Estimate Solar Calculator</a>
         </div>
     </main>
+
+    <!-- WhatsApp Button -->
+    <a
+        href="https://wa.me/03182043180"
+        target="_blank"
+        class="whatsapp-btn">
+        <img src="{% static 'images/whatsapp_logo.jpeg' %}" alt="WhatsApp">
+    </a>
 
     <footer>
         <p>&copy; 2024 HNF Solar Services. All rights reserved.</p>

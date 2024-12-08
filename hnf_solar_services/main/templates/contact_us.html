@@ -5,126 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - HNF Solar Services</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <style>
-        /* General Styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Navigation Bar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            padding: 10px 20px;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-
-        .navbar a:hover {
-            text-decoration: underline;
-        }
-
-        .logo img {
-            height: 50px;
-        }
-
-        /* Main Body Layout */
-        main {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-        }
-
-        .left-section {
-            width: 50%;
-        }
-
-        .right-section {
-            width: 50%;
-            padding-left: 20px;
-        }
-
-        /* Slideshow Styling */
-        .slideshow {
-            width: 100%;
-            height: auto;
-            position: relative;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-
-        .slideshow img {
-            width: 100%;
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .slideshow img.active {
-            opacity: 1;
-            position: relative;
-        }
-
-        /* Contact Details Styling */
-        .contact-container {
-            text-align: left;
-        }
-
-        .contact-details ul {
-            list-style: none;
-            padding: 0;
-            font-size: 1.2rem;
-        }
-
-        .contact-details li {
-            margin-bottom: 10px;
-        }
-
-        /* Button Styling */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    color: white;
-    background-color: #4caf50;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.btn:hover {
-    background-color: #4caf50; /* Darker blue on hover */
-    transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-}
-
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/contact_us.css' %}">
 </head>
 <body>
     <!-- Navigation Bar -->
     <header>
         <div class="navbar">
             <a href="/" class="logo">
-                <img src="{% static 'logo.jpeg' %}" alt="Logo">
+                <img src="{% static 'images/logo.jpeg' %}" alt="Logo">
             </a>
             <nav>
                 <a href="/services/">Services</a>
@@ -161,7 +49,7 @@
                     </ul>
                 </div>
                 <div>
-                    <a href="/calculator/" class="btn">Get Estimate Calculator</a>
+                    <a href="/calculator/" class="btn">Estimate Solar Calculator</a>
                 </div>
             </div>
         </div>
@@ -173,22 +61,6 @@
     </footer>
 
     <!-- Slideshow Script -->
-    <script>
-        let slideIndex = 0;
-
-        function showSlides() {
-            const slides = document.querySelectorAll('.slideshow img');
-
-            // Hide all slides
-            slides.forEach(slide => slide.classList.remove('active'));
-
-            // Show the next slide
-            slideIndex = (slideIndex + 1) % slides.length; // Loop back to the first slide
-            slides[slideIndex].classList.add('active');
-        }
-
-        // Change slides every 3 seconds
-        setInterval(showSlides, 3000);
-    </script>
+    <script src="{% static 'js/contact_us.js' %}"></script>
 </body>
 </html>

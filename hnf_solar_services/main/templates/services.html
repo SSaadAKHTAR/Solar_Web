@@ -5,172 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HNF Solar Services</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #333;
-            color: #333;
-        }
-        
-        header {
-            background-color: #004d40;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-        
-        header h1 {
-            font-size: 2rem;
-            margin: 0;
-        }
-        
-        /* Add the navbar styles here */
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* Space out items */
-            padding: 10px 20px;
-            background-color: #004d40;
-            color: white;
-            flex-wrap: nowrap; /* Prevent wrapping */
-        }
-        
-        .navbar .logo {
-            margin-right: 20px;
-        }
-        
-        .navbar .nav-links {
-            display: flex;
-            gap: 20px; /* Space between links */
-            flex-grow: 1; /* Push the button to the extreme right */
-        }
-        
-        .navbar .nav-links a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            font-size: 1rem;
-        }
-        
-        .navbar .btn-estimate {
-            display: inline-block;
-            background-color: #4caf50; /* Green button */
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 1rem;
-            text-align: center;
-            transition: background-color 0.3s ease;
-            margin-left: auto; /* Push the button to the extreme right */
-        }
-        
-        .navbar .btn-estimate:hover {
-            background-color: #45a049; /* Slightly darker green on hover */
-        }
-        
-        /* Responsive Behavior */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column; /* Stack elements vertically */
-                align-items: stretch;
-            }
-            .nav-links {
-                justify-content: center;
-                margin: 10px 0;
-            }
-            .btn-estimate {
-                margin-left: 0; /* Reset margin for smaller screens */
-                margin-top: 10px;
-            }
-        }                        
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-        
-        /* Rest of your styles */
-        .hero {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .hero h1 {
-            font-size: 2rem;
-            color: #00695c; /* Slightly lighter shade of #004d40 */
-        }
-        
-        .service-card {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .card {
-            flex: 1 1 calc(50% - 20px);
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            transition: transform 0.2s ease-in-out;
-        }
-        
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .card h3 {
-            color: #004d40; /* Dark green */
-        }
-        
-        footer {
-            background-color: #004d40;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-        
-        .floating-buttons {
-            position: fixed;
-            right: 15px;
-            bottom: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .floating-buttons a {
-            text-decoration: none;
-            background-color: #004d40;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 1.5rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        
-        .floating-buttons a:hover {
-            background-color: #00332e; /* Darker shade of #004d40 */
-        }        
-    </style>
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <a href="/" class="logo">
-                <img src="{% static 'logo.jpeg' %}" alt="Logo">
+                <img src="{% static 'images/logo.jpeg' %}" alt="Logo">
             </a>
             <div class="nav-links">
                 <a href="/services/">Services</a>
@@ -179,96 +20,69 @@
                 <a href="/contact-us/">Contact Us</a>
             </div>
             <a href="/calculator/" class="btn-estimate">Estimate Solar Calculator</a>
-        </nav>        
+        </nav>
     </header>    
     <div class="container">
         <div class="hero">
             <h1>Welcome to HNF Solar Services</h1>
-            <p>Your trusted partner for solar energy solutions in Pakistan.</p>
+            <p>Empowering Pakistan with reliable solar energy solutions.</p>
         </div>
-        
-        <section>
+
+        <section class="highlight-section">
             <h2>Why Choose HNF Solar?</h2>
-            <ul>
-                <li><b>Local Expertise:</b> With years of experience, we understand the unique environmental and energy challenges and opportunities in the Pakistani solar market.</li>
-                <li><b>Extensive Experience:</b> With a proven track record of managing MW-scale solar projects, we know how to handle every aspect of your solar consultation with expertise.</li>
-                <li><b>Quality Assurance:</b> Our consultations are backed by high-quality standards and a due diligence process to ensure you receive the best recommendations and materials for your solar panel installations.</li>
-                <li><b>Customer-Centric Approach:</b> Your satisfaction is our priority. We’re dedicated to guiding you through your solar journey, making it as smooth and rewarding as possible.</li>
+            <ul class="highlight-list">
+                <li><b>Local Expertise:</b> Tailored solutions for Pakistan's unique energy needs.</li>
+                <li><b>Extensive Experience:</b> Proven record in managing MW-scale solar projects.</li>
+                <li><b>Quality Assurance:</b> High standards and reliable consultations.</li>
+                <li><b>Customer-Centric Approach:</b> Ensuring a smooth solar journey.</li>
             </ul>
         </section>
 
         <section>
-            <h2>Our Services</h2>
+            <h2 class="section-heading">Our Services</h2>
             <div class="service-card">
                 <div class="card">
                     <h3>Solar System Consultancy</h3>
-                    <p>
-                        Expertise in industrial and commercial solar solutions with precision and care.
-                    </p>
+                    <p>Precision solar solutions for industrial and commercial clients.</p>
                 </div>
                 <div class="card">
                     <h3>Solar System Installation</h3>
-                    <p>
-                        High-quality installations for homes, schools, hospitals, and multinational companies.
-                    </p>
+                    <p>High-quality installations for homes, schools, and industries.</p>
                 </div>
                 <div class="card">
                     <h3>Solar System Maintenance</h3>
-                    <p>
-                        Keep your solar system running efficiently with top-notch maintenance services.
-                    </p>
+                    <p>Boost system efficiency with professional maintenance services.</p>
                 </div>
                 <div class="card">
                     <h3>Solar Panel Cleaning</h3>
-                    <p>
-                        Ensure optimal solar panel performance with expert cleaning services.
-                    </p>
+                    <p>Ensure optimal performance with expert cleaning services.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Solar System Installation Section -->
         <section>
-            <h2>Solar System Installation</h2>
-            <p>
-                Professional installation is critical for maximizing the efficiency of your solar system. 
-                HNF Solar ensures high installation standards and professional designs to provide the best performance for your system. 
-                Our services cover installations on rooftops, ground spaces, and even agricultural fields and farms.
-            </p>
-            <h3>Our Process</h3>
-            <ul>
-                <li><b>Site Survey:</b> A comprehensive evaluation of your site to assess its solar potential.</li>
-                <li><b>3D System Design:</b> Detailed 3D solar PV designs outlining the system's layout and panel requirements.</li>
-                <li><b>Expert Installation:</b> Installation by professionals with over 15 years of expertise, ensuring precision and safety.</li>
+            <h2 class="section-heading">Our Process</h2>
+            <ul class="icon-list">
+                <li>🔍 <b>Site Survey:</b> Evaluate solar potential with precision.</li>
+                <li>📐 <b>3D System Design:</b> Plan layouts and panel requirements.</li>
+                <li>⚙️ <b>Expert Installation:</b> Safety and precision by professionals.</li>
             </ul>
             <p>
-                We’ve worked with numerous reputable organizations, including the Pakistan Army, Pakistan Air Force, Forward Sports, 
-                and Quaid-e-Azam Solar Park in Bahawalpur, making us a trusted name in the industry.
+                Trusted by top organizations like Pakistan Army, Forward Sports, and Quaid-e-Azam Solar Park.
             </p>
         </section>
 
-        <!-- Solar System Maintenance Section -->
         <section>
-            <h2>Solar System Maintenance</h2>
-            <p>
-                Proper maintenance is essential for optimal solar system performance, enhancing efficiency by up to 30%. 
-                At HNF Solar, we provide top-tier maintenance services, including cleaning, inspections, repairs, and monitoring.
-            </p>
-            <h3>Our Maintenance Services</h3>
-            <ul>
-                <li><b>Solar Panel Cleaning:</b> Ensuring panels remain free from debris to maintain efficiency.</li>
-                <li><b>System Inspections:</b> Regular checks of inverters, batteries, wiring, and mounts to identify issues early.</li>
-                <li><b>Repair & Replacement:</b> Skilled repairs and replacements of damaged system components.</li>
-                <li><b>Performance Monitoring:</b> Tracking output and addressing any performance issues promptly.</li>
-                <li><b>Preventive Maintenance:</b> Educating clients on best practices to maximize system lifespan.</li>
-                <li><b>Battery Monitoring:</b> Ensuring proper charging and discharging to enhance durability.</li>
+            <h2 class="section-heading">Maintenance Services</h2>
+            <ul class="icon-list">
+                <li>✨ <b>Solar Panel Cleaning:</b> Maximize energy production.</li>
+                <li>🔧 <b>System Inspections:</b> Identify and resolve issues promptly.</li>
+                <li>🔄 <b>Repairs & Replacement:</b> Skilled component replacements.</li>
+                <li>📊 <b>Performance Monitoring:</b> Regular tracking of output.</li>
             </ul>
-            <p>
-                Our dedicated on-call services address any concerns quickly, ensuring a seamless experience for our clients.
-            </p>
         </section>
-        
-    </div>    
+    </div>
+
     <footer>
         <p>&copy; 2024 HNF Solar. All rights reserved.</p>
     </footer>
@@ -277,5 +91,7 @@
         <a href="https://wa.me/YourNumber" target="_blank">📞</a>
         <a href="mailto:info@hnfsolar.com">✉️</a>
     </div>
+
+    <script src="{% static 'css/script.js' %}"></script>
 </body>
 </html>

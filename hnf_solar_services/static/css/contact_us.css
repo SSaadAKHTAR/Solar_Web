@@ -1,0 +1,141 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #003d33, #00796b);
+    padding: 15px 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: #ffcc80;
+}
+
+.logo img {
+    height: 60px;
+}
+
+/* Main Body Layout */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.left-section, .right-section {
+    width: 100%;
+    max-width: 48%;
+    margin: 1%;
+}
+
+/* Slideshow Styling */
+.slideshow {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.slideshow img {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+.slideshow img.active {
+    display: block;
+}
+
+/* Contact Details Styling */
+.contact-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h1 {
+    font-size: 28px;
+    color: #003d33;
+    margin-bottom: 20px;
+}
+
+.contact-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-details li {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #555;
+}
+
+.contact-details strong {
+    color: #00796b;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #004d40, #80cbc4);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, rgb(255, 136, 0), rgb(255, 193, 7));
+    color: #003d33;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background: #003d33;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .left-section, .right-section {
+        max-width: 100%;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .navbar a {
+        margin: 10px 5px;
+    }
+}

@@ -5,122 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HNF Solar Services</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <style>
-        /* General Styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Navigation Bar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            padding: 10px 20px;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-
-        .navbar a:hover {
-            text-decoration: underline;
-        }
-
-        .logo img {
-            height: 50px;
-        }
-
-        /* Main Body Layout */
-        main {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-        }
-
-        .left-section {
-            width: 50%;
-            padding-right: 20px;
-        }
-
-        .right-section {
-            width: 50%;
-            padding-left: 20px;
-        }
-
-        /* Slideshow Styling */
-        .slideshow {
-            position: relative;
-            width: 100%;
-            height: 400px; /* Adjust height as needed */
-            overflow: hidden;
-        }
-
-        .slideshow img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .slideshow img.active {
-            opacity: 1; /* Show the active image */
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-        }
-
-        /* WhatsApp Button Styling */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .whatsapp-btn img {
-            width: 75px;
-            height: 75px;
-            transition: transform 0.3s ease; /* Smooth scaling effect */
-        }
-
-        .whatsapp-btn:hover img {
-            transform: scale(1.1); /* Slightly enlarge on hover */
-        }
-
-    </style>
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <!-- Navigation Bar -->
     <header>
-        <div class="navbar">
-            <a href="/" class="logo">
-                <img src="{% static 'logo.jpeg' %}" alt="Logo">
-            </a>
-            <nav>
-                <a href="/services/">Services</a>
-                <a href="/projects/">Our Projects</a>
-                <a href="/blog/">Blog</a>
-                <a href="/contact-us/">Contact Us</a>
-            </nav>
+        <div class="logo">
+            <img src="{% static 'images/logo.jpeg' %}" alt="HNF Solutions Logo">
         </div>
+        <nav class="navbar">
+            <a href="/services/">Services</a>
+            <a href="/projects/">Our Projects</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact-us/">Contact Us</a>
+        </nav>
     </header>
 
-    <!-- Main Body -->
+    <!-- Main Content -->
     <main>
+        <!-- Left Section: Slideshow -->
         <div class="left-section">
             <div class="slideshow">
                 <img src="{% static 'images/solarM.jpeg' %}" alt="Solar Panel M" class="active">
@@ -130,73 +34,38 @@
                 <img src="{% static 'images/solar4.jpeg' %}" alt="Solar Panel 4">
             </div>
         </div>
+
+        <!-- Right Section: Content -->
         <div class="right-section">
-            <h1>HNF Solutions: Your Trusted Partner for Solar and Electrical Services</h1>
-            <p>
-                HNF Solutions is a premier provider of solar and electrical services, dedicated to delivering top-quality solutions tailored to meet the diverse needs of our clients. Our expertise spans across a range of services, including:
-            </p>
+            <h1>HNF Solutions: Your Trusted Partner for Solar Services</h1>
+            <p>We offer tailored solutions in:</p>
             <ul>
-                <li>
-                    <strong>1. Solar System Installation</strong> 
-                </li>
-                <li>
-                    <strong>2. Solar System Maintenance and Debugging</strong> 
-                </li>
-                <li>
-                    <strong>3. Solar Panel Cleaning</strong> 
-                </li>
-                <li>
-                    <strong>4. Electrical Services</strong> 
-                </li>
+                <li>Solar System Installation</li>
+                <li>Solar System Maintenance and Debugging</li>
+                <li>Solar Panel Cleaning</li>
+                <li>Electrical Services</li>
             </ul>
-            <p>
-                Our website features an innovative <strong>Solar System Calculator</strong> to provide tailored solar solutions. This tool allows you to:
-            </p>
+            <p>Use our <strong>Solar System Calculator</strong> to:</p>
             <ul>
-                <li>
-                    <strong>Select Appliances:</strong> Choose from various household and commercial appliances.
-                </li>
-                <li>
-                    <strong>Specify Quantities:</strong> Enter the number of appliances to calculate total energy consumption in watts.
-                </li>
-                <li>
-                    <strong>Receive Recommendations:</strong> Get suggestions for the optimal solar system, panels, and peripherals.
-                </li>
+                <li>Select appliances (Choose from various household and commercial appliances)</li>
+                <li>Specify quantities (Enter the number of appliances to calculate total energy consumption in watts)</li>
+                <li>Receive recommendations (Get suggestions for the optimal solar system, panels, and peripherals)</li>
             </ul>
-            </ul>           
             <a href="/calculator/" class="btn">Estimate Solar Calculator</a>
         </div>
     </main>
 
     <!-- WhatsApp Button -->
-    <a
-        href="https://wa.me/03182043180"
-        target="_blank"
-        class="whatsapp-btn">
+    <a href="https://wa.me/03182043180" target="_blank" class="whatsapp-btn">
         <img src="{% static 'images/whatsapp_logo.jpeg' %}" alt="WhatsApp">
     </a>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 HNF Solar Services. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Slideshow -->
-    <script>
-        let slideIndex = 0;
-
-        function showSlides() {
-            const slides = document.querySelectorAll('.slideshow img');
-
-            // Hide all slides
-            slides.forEach(slide => slide.classList.remove('active'));
-
-            // Show the next slide
-            slideIndex = (slideIndex + 1) % slides.length; // Loop back to the first slide
-            slides[slideIndex].classList.add('active');
-        }
-
-        // Change slides every 3 seconds
-        setInterval(showSlides, 3000);
-    </script>
+    <!-- Link to External JavaScript -->
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

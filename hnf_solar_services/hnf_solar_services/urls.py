@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from main import views
+# from .views import suggestions_view 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +27,5 @@ urlpatterns = [
     path('projects/', views.projects, name='projects'),
     path('blog/', views.blog, name='blog'),
     path('calculator/', views.estimate_cost, name='estimate_cost'),
+    path('suggestions/', views.suggestions_view, name='suggestions'),
 ]

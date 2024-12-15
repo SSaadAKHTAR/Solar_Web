@@ -38,8 +38,57 @@ function calculateTotal() {
         totalLoad += watts * quantity;
     });
     document.getElementById("total-load").value = totalLoad;
+    return totalLoad;
 }
 
 function submitData() {
-    alert("Total Load Calculated: " + document.getElementById("total-load").value + " Watts");
+    // Simulated total load value for now, replace this with actual calculation logic
+    const totalLoad = calculateTotal(); // Example: Replace with dynamic user input or calculation
+    
+    // Send data to backend
+    fetch('/suggestions/', {  // URL of the Django view
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCSRFToken(), // Include CSRF token for security
+        },
+        body: JSON.stringify({ totalLoad: totalLoad }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Suggestions received:', data);
+        displaySuggestions(data); // Call the display function
+    })
+    .catch(error => {
+        console.error('Error fetching suggestions:', error);
+        alert("An error occurred while fetching suggestions.");
+    });
 }
+
+// Helper function to retrieve CSRF Token (for Django POST requests)
+function getCSRFToken() {
+    return document.cookie.split('; ')
+        .find(row => row.startsWith('csrftoken'))
+        .split('=')[1];
+}
+
+// Display the suggestions dynamically
+function displaySuggestions(data) {
+    const suggestionsDiv = document.getElementById('suggestions');
+    suggestionsDiv.innerHTML = '<h3>Solar Panel Suggestions:</h3>';
+
+    Object.keys(data).forEach(key => {
+        const watts = data[key].wattage;
+        const plateCount = data[key].plate_count;
+        const totalWatts = data[key].total_watts_generated;
+
+        suggestionsDiv.innerHTML += `
+            <p><strong>For ${watts}W panels:</strong></p>
+            <ul>
+                <li>Total plates required: ${plateCount}</li>
+                <li>Total watts generated: ${totalWatts}W</li>
+            </ul>
+        `;
+    });
+}
+

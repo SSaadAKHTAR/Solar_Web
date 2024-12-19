@@ -14,7 +14,7 @@ solar_panels = {
     "solar5": 550,
     "solar6": 585,
     "solar7": 605,
-    "solar8": 700,
+    "solar8": 700, 
 }
 
 def home(request):
